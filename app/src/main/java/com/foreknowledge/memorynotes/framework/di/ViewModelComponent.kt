@@ -1,7 +1,7 @@
-package com.foreknowledge.cleanarchitectureex.framework.di
+package com.foreknowledge.memorynotes.framework.di
 
-import com.foreknowledge.cleanarchitectureex.framework.ListViewModel
-import com.foreknowledge.cleanarchitectureex.framework.NoteViewModel
+import com.foreknowledge.memorynotes.framework.ListViewModel
+import com.foreknowledge.memorynotes.framework.NoteViewModel
 import dagger.Component
 
 @Component(modules = [AppModule::class, RepositoryModule::class, UseCasesModule::class])

@@ -1,10 +1,10 @@
-package com.foreknowledge.cleanarchitectureex.framework
+package com.foreknowledge.memorynotes.framework
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.foreknowledge.cleanarchitectureex.framework.di.AppModule
-import com.foreknowledge.cleanarchitectureex.framework.di.DaggerViewModelComponent
+import com.foreknowledge.memorynotes.framework.di.AppModule
+import com.foreknowledge.memorynotes.framework.di.DaggerViewModelComponent
 import com.foreknowledge.core.data.Note
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

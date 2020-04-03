@@ -1,8 +1,8 @@
-package com.foreknowledge.cleanarchitectureex.presentation
+package com.foreknowledge.memorynotes.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.foreknowledge.cleanarchitectureex.R
+import com.foreknowledge.memorynotes.R
 
 class MainActivity : AppCompatActivity() {
 

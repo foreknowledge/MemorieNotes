@@ -1,6 +1,6 @@
-package com.foreknowledge.cleanarchitectureex.framework.di
+package com.foreknowledge.memorynotes.framework.di
 
-import com.foreknowledge.cleanarchitectureex.framework.UseCases
+import com.foreknowledge.memorynotes.framework.UseCases
 import com.foreknowledge.core.repository.NoteRepository
 import com.foreknowledge.core.usecase.*
 import dagger.Module

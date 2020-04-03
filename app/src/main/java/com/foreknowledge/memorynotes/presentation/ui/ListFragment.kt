@@ -1,4 +1,4 @@
-package com.foreknowledge.cleanarchitectureex.presentation
+package com.foreknowledge.memorynotes.presentation.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,13 +10,21 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 
-import com.foreknowledge.cleanarchitectureex.R
-import com.foreknowledge.cleanarchitectureex.framework.ListViewModel
+import com.foreknowledge.memorynotes.R
+import com.foreknowledge.memorynotes.framework.ListViewModel
+import com.foreknowledge.memorynotes.presentation.ListFragmentDirections
+import com.foreknowledge.memorynotes.presentation.adapter.NoteListAdapter
+import com.foreknowledge.memorynotes.presentation.listener.ItemClickListener
 import kotlinx.android.synthetic.main.fragment_list.*
 
-class ListFragment : Fragment(), ItemClickListener {
+class ListFragment : Fragment(),
+    ItemClickListener {
 
-    private val noteListAdapter = NoteListAdapter(mutableListOf(), this)
+    private val noteListAdapter =
+        NoteListAdapter(
+            mutableListOf(),
+            this
+        )
     private lateinit var viewModel: ListViewModel
 
     override fun onCreateView(
@@ -56,7 +64,10 @@ class ListFragment : Fragment(), ItemClickListener {
     }
 
     private fun goToNoteDetails(noteId: Long = 0L) {
-        val action = ListFragmentDirections.actionGoToNote(noteId)
+        val action =
+            ListFragmentDirections.actionGoToNote(
+                noteId
+            )
         Navigation.findNavController(notesListView).navigate(action)
     }
 

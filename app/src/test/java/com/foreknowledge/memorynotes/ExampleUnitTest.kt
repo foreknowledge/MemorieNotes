@@ -1,4 +1,4 @@
-package com.foreknowledge.cleanarchitectureex
+package com.foreknowledge.memorynotes
 
 import org.junit.Test
 

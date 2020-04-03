@@ -1,4 +1,4 @@
-package com.foreknowledge.cleanarchitectureex.framework.db
+package com.foreknowledge.memorynotes.framework.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

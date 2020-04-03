@@ -1,8 +1,8 @@
-package com.foreknowledge.cleanarchitectureex.framework
+package com.foreknowledge.memorynotes.framework
 
 import android.content.Context
-import com.foreknowledge.cleanarchitectureex.framework.db.DatabaseService
-import com.foreknowledge.cleanarchitectureex.framework.db.NoteEntity
+import com.foreknowledge.memorynotes.framework.db.DatabaseService
+import com.foreknowledge.memorynotes.framework.db.NoteEntity
 import com.foreknowledge.core.data.Note
 import com.foreknowledge.core.repository.NoteDataSource
 

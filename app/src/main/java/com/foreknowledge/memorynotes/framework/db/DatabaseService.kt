@@ -1,4 +1,4 @@
-package com.foreknowledge.cleanarchitectureex.framework.db
+package com.foreknowledge.memorynotes.framework.db
 
 import android.content.Context
 import androidx.room.Database

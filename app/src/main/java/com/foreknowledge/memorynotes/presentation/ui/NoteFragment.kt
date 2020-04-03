@@ -1,4 +1,4 @@
-package com.foreknowledge.cleanarchitectureex.presentation
+package com.foreknowledge.memorynotes.presentation.ui
 
 import android.app.AlertDialog
 import android.content.Context
@@ -13,9 +13,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.Navigation
 
-import com.foreknowledge.cleanarchitectureex.R
-import com.foreknowledge.cleanarchitectureex.framework.NoteViewModel
+import com.foreknowledge.memorynotes.R
+import com.foreknowledge.memorynotes.framework.NoteViewModel
 import com.foreknowledge.core.data.Note
+import com.foreknowledge.memorynotes.presentation.NoteFragmentArgs
 import kotlinx.android.synthetic.main.fragment_note.*
 
 class NoteFragment : Fragment() {
@@ -43,7 +44,9 @@ class NoteFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(NoteViewModel::class.java)
 
         arguments?.let {
-            noteId = NoteFragmentArgs.fromBundle(it).noteId
+            noteId = NoteFragmentArgs.fromBundle(
+                it
+            ).noteId
         }
 
         if (noteId != 0L)

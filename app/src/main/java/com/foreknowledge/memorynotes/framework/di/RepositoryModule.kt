@@ -1,7 +1,7 @@
-package com.foreknowledge.cleanarchitectureex.framework.di
+package com.foreknowledge.memorynotes.framework.di
 
 import android.app.Application
-import com.foreknowledge.cleanarchitectureex.framework.RoomNoteDataSource
+import com.foreknowledge.memorynotes.framework.RoomNoteDataSource
 import com.foreknowledge.core.repository.NoteRepository
 import dagger.Module
 import dagger.Provides

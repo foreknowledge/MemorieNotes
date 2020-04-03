@@ -1,4 +1,4 @@
-package com.foreknowledge.cleanarchitectureex.framework.di
+package com.foreknowledge.memorynotes.framework.di
 
 import android.app.Application
 import dagger.Module

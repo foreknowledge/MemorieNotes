@@ -1,4 +1,4 @@
-package com.foreknowledge.cleanarchitectureex.framework
+package com.foreknowledge.memorynotes.framework
 
 import com.foreknowledge.core.usecase.*
 

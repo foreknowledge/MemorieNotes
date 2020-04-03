@@ -1,11 +1,12 @@
-package com.foreknowledge.cleanarchitectureex.presentation
+package com.foreknowledge.memorynotes.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.foreknowledge.cleanarchitectureex.R
+import com.foreknowledge.memorynotes.R
 import com.foreknowledge.core.data.Note
+import com.foreknowledge.memorynotes.presentation.listener.ItemClickListener
 import kotlinx.android.synthetic.main.item_note.view.*
 import java.text.SimpleDateFormat
 import java.util.*
