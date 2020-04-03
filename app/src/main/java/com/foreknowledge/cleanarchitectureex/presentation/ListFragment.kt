@@ -14,9 +14,9 @@ import com.foreknowledge.cleanarchitectureex.R
 import com.foreknowledge.cleanarchitectureex.framework.ListViewModel
 import kotlinx.android.synthetic.main.fragment_list.*
 
-class ListFragment : Fragment() {
+class ListFragment : Fragment(), ItemClickListener {
 
-    private val noteListAdapter = NoteListAdapter(mutableListOf())
+    private val noteListAdapter = NoteListAdapter(mutableListOf(), this)
     private lateinit var viewModel: ListViewModel
 
     override fun onCreateView(
@@ -58,6 +58,10 @@ class ListFragment : Fragment() {
     private fun goToNoteDetails(noteId: Long = 0L) {
         val action = ListFragmentDirections.actionGoToNote(noteId)
         Navigation.findNavController(notesListView).navigate(action)
+    }
+
+    override fun onClick(id: Long) {
+        goToNoteDetails(id)
     }
 
 }
