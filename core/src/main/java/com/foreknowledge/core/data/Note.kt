@@ -1,9 +1,9 @@
 package com.foreknowledge.core.data
 
 class Note (
-    var id: Long = 0,
+    var id: Long = 0L,
     var title: String,
     var content: String,
-    var createTime: Long,
+    var creationTime: Long,
     var updateTime: Long
 )
