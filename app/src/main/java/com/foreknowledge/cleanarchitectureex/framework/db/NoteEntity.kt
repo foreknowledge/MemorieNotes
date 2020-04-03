@@ -7,9 +7,6 @@ import com.foreknowledge.core.data.Note
 
 @Entity(tableName = "note")
 data class NoteEntity (
-    @PrimaryKey(autoGenerate = true)
-    val id: Long = 0L,
-
     val title: String,
     val content: String,
 
@@ -17,12 +14,15 @@ data class NoteEntity (
     val creationTime: Long,
 
     @ColumnInfo(name = "update_date")
-    val updateTime: Long
+    val updateTime: Long,
+
+    @PrimaryKey(autoGenerate = true)
+    val id: Long = 0L
 ) {
     companion object {
         fun fromNote(note: Note) =
-            NoteEntity(note.id, note.title, note.content, note.creationTime, note.updateTime)
+            NoteEntity(note.title, note.content, note.creationTime, note.updateTime, note.id)
     }
 
-    fun toNote() = Note(id, title, content, creationTime, updateTime)
+    fun toNote() = Note(title, content, creationTime, updateTime, id)
 }
