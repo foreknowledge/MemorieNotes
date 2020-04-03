@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -19,8 +20,10 @@ import com.foreknowledge.core.data.Note
 import kotlinx.android.synthetic.main.fragment_note.*
 
 class NoteFragment : Fragment() {
+
+    private var noteId = 0L
     private lateinit var viewModel: NoteViewModel
-    private val currentNote = Note("", "", 0L, 0L)
+    private var currentNote = Note("", "", 0L, 0L)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +37,13 @@ class NoteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProviders.of(this).get(NoteViewModel::class.java)
+
+        arguments?.let {
+            noteId = NoteFragmentArgs.fromBundle(it).noteId
+        }
+
+        if (noteId != 0L)
+            viewModel.getNote(noteId)
 
         storeNote.setOnClickListener {
             if (title.isNotBlank() || content.isNotBlank()) {
@@ -65,6 +75,14 @@ class NoteFragment : Fragment() {
             }
             else {
                 Toast.makeText(context, "Something went wrong, please try again.", Toast.LENGTH_SHORT).show()
+            }
+        })
+
+        viewModel.currentNote.observe(viewLifecycleOwner, Observer {note ->
+            note?.let {
+                currentNote = it
+                title.setText(it.title, TextView.BufferType.EDITABLE)
+                content.setText(currentNote.content, TextView.BufferType.EDITABLE)
             }
         })
     }
