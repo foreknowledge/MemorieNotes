@@ -1,11 +1,10 @@
 package com.foreknowledge.cleanarchitectureex.presentation
 
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
@@ -24,6 +23,11 @@ class NoteFragment : Fragment() {
     private var noteId = 0L
     private lateinit var viewModel: NoteViewModel
     private var currentNote = Note("", "", 0L, 0L)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -93,4 +97,27 @@ class NoteFragment : Fragment() {
     }
 
     private fun EditText.isNotBlank() = text.toString().isNotBlank()
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.note_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.deleteNote -> {
+                if (context != null && noteId != 0L) {
+                    AlertDialog.Builder(context)
+                        .setTitle("Delete note")
+                        .setMessage("Are you sure you want to delete this note?")
+                        .setPositiveButton("Yes") { _ , _ -> viewModel.deleteNote(currentNote) }
+                        .setNegativeButton("No") { _ , _ -> }
+                        .create()
+                        .show()
+                }
+            }
+        }
+
+        return true
+    }
 }
