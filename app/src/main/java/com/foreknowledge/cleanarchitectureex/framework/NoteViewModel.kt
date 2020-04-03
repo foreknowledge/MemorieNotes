@@ -3,27 +3,26 @@ package com.foreknowledge.cleanarchitectureex.framework
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.foreknowledge.cleanarchitectureex.framework.di.AppModule
+import com.foreknowledge.cleanarchitectureex.framework.di.DaggerViewModelComponent
 import com.foreknowledge.core.data.Note
-import com.foreknowledge.core.repository.NoteRepository
-import com.foreknowledge.core.usecase.AddNote
-import com.foreknowledge.core.usecase.GetAllNotes
-import com.foreknowledge.core.usecase.GetNote
-import com.foreknowledge.core.usecase.RemoveNote
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 class NoteViewModel(application: Application): AndroidViewModel(application) {
     private val coroutineScope = CoroutineScope(Dispatchers.IO)
 
-    private val repository = NoteRepository(RoomNoteDataSource(application))
+    @Inject
+    lateinit var useCases: UseCases
 
-    private val useCases = UseCases(
-        AddNote(repository),
-        GetNote(repository),
-        GetAllNotes(repository),
-        RemoveNote(repository)
-    )
+    init {
+        DaggerViewModelComponent.builder()
+            .appModule(AppModule(application))
+            .build()
+            .inject(this)
+    }
 
     val saved = MutableLiveData<Boolean>()
     val currentNote = MutableLiveData<Note?>()
