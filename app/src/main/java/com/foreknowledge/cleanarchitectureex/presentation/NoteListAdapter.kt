@@ -10,11 +10,10 @@ import kotlinx.android.synthetic.main.item_note.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class NoteListAdapter(private val notes: MutableList<Note>): RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
+class NoteListAdapter(private var notes: List<Note>): RecyclerView.Adapter<NoteListAdapter.NoteViewHolder>() {
 
-    fun updateNotes(newNotes: MutableList<Note>) {
-        notes.clear()
-        notes.addAll(newNotes)
+    fun updateNotes(newNotes: List<Note>) {
+        notes = newNotes
         notifyDataSetChanged()
     }
 
