@@ -30,6 +30,7 @@ class NoteListAdapter(private var notes: List<Note>, private val listener: ItemC
         private val noteTitle = view.title
         private val noteContent = view.content
         private val noteDate = view.date
+        private val noteWords = view.wordCount
 
         fun bind(note: Note) {
             noteTitle.text = note.title
@@ -39,6 +40,7 @@ class NoteListAdapter(private var notes: List<Note>, private val listener: ItemC
             val resultDate = "Last updated: ${sdf.format(Date(note.updateTime))}"
             noteDate.text = resultDate
 
+            noteWords.text = "Words: ${note.wordCount}"
             noteLayout.setOnClickListener{ listener.onClick(note.id) }
         }
     }

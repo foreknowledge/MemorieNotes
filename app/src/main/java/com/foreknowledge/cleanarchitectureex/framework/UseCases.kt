@@ -1,13 +1,11 @@
 package com.foreknowledge.cleanarchitectureex.framework
 
-import com.foreknowledge.core.usecase.AddNote
-import com.foreknowledge.core.usecase.GetAllNotes
-import com.foreknowledge.core.usecase.GetNote
-import com.foreknowledge.core.usecase.RemoveNote
+import com.foreknowledge.core.usecase.*
 
 data class UseCases (
     val addNote: AddNote,
     val getNote: GetNote,
     val getAllNotes: GetAllNotes,
-    val removeNote: RemoveNote
+    val removeNote: RemoveNote,
+    val getWordCount: GetWordCount
 )
