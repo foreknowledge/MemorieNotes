@@ -8,7 +8,7 @@ Clean Architecture 적용 프로젝트
 
 ### Project Layer
 
-![project_structure_1](https://user-images.githubusercontent.com/29790944/78422806-1c011f00-769d-11ea-9fc4-0164382b24c3.png)
+<img alt="project_structure_1" src="https://user-images.githubusercontent.com/29790944/78422806-1c011f00-769d-11ea-9fc4-0164382b24c3.png" width="500">
 
 ### Project Structure
 
@@ -80,7 +80,7 @@ Clean Architecture 적용 프로젝트
 
 - POJOs (= Plain Old Java Objects)
 
-    Java나 Kotlin에서 Simple Data 저장 용도 이외에 어떤 작업도 하지 않는 객체
+    Java에서 Simple Data 저장 용도 이외에 어떤 작업도 하지 않는 객체로, Kotlin에서 data class에 해당한다.
 
 ### Use cases
 
@@ -100,7 +100,7 @@ Clean Architecture 적용 프로젝트
 
 - Interfaces
 
-    각 controller나 presenter, adapter의 역할 정의
+    각 controller나 presenter, adapter의 역할을 정의한다.
 
 - Retrieve data from various sources
 
@@ -127,6 +127,28 @@ Clean Architecture 적용 프로젝트
 ---
 
 ## MVVM pattern
+
+### Model-View-ViewModel의 구조
+
+- **Model** - business logic과 data를 담당한다.
+- **View** - UI를 담당한다.
+- **ViewModel** - Model과 View를 연결하는 다리 역할로 **async callback**으로 동작하는 것이 특징이다.
+
+&nbsp;
+
+### 동작 과정
+
+![MVVM](https://user-images.githubusercontent.com/29790944/78423335-94b5aa80-76a0-11ea-98fa-46abf6d589be.png)
+
+ViewModel과 Model의 통신은 UI가 block되는 것을 막기 위해 background thread에서 동작하도록 강제한다.
+
+&nbsp;
+
+### 장점
+
+- Google에서 지원하는 기능으로 Android Jetpack의 구성 요소로 들어 있다.
+- ViewModel을 사용하면 Activity/Fragment lifecycle과 잘 맞물려서 돌아간다.
+- LiveData는 View와 async callback으로 communication 한다.
 
 &nbsp;
 
