@@ -231,6 +231,8 @@ AAC는 Android Architecture Component의 약자로, Android Jetpack에 포함되
 
     Visual Editor를 사용해 screen을 연결 해 주고 전달할 parameter를 정의해 주는 작업으로 Graph를 만들 수 있는데, Graph를 만들기만 하면 알아서 그에 맞는 class가 생성된다.
 
+&nbsp;
+
 #### 장점
 
 - Handles fragment transactions
@@ -252,24 +254,29 @@ AAC는 Android Architecture Component의 약자로, Android Jetpack에 포함되
 
     web url을 이용한 deep linking은 intent-filter를 이용해 구현했어야 했는데, navigation에서는 `<deep link>` 태그를 이용해 uri를 지정할 수 있다.
 
+&nbsp;
+
 #### 구성 요소
 
 Navigation은 다음 3가지로 구성된다.
 
-Navigation Graph
+1. Navigation Graph
 
-- 화면이동에 대한 모든정보(moving action, parameter, 화면 단위)를 정의하는 곳이다.
-- Graph를 통해 app flow를 시각화 해서 한 눈에 볼 수 있다.
+    화면이동에 대한 모든정보(moving action, parameter, 화면 단위)를 정의하는 곳이다.
 
-Nav Host Fragment
+    Graph를 통해 app flow를 시각화 해서 한 눈에 볼 수 있다.
 
-- NavHost는 Navigation Graph에 정의된 화면들을 보여주는 컨테이너의 역할을 한다.
-- 화면이동에 대한 액션은 모두 Nav Host Fragment에게 위임된다.
-- NavHost에는 Nav Controller도 포함한다.
+2. Nav Host Fragment
 
-Nav Controller
+    NavHost는 Navigation Graph에 정의된 화면들을 보여주는 컨테이너의 역할을 한다.
 
-- NavController는 화면이동에 대한 컨트롤러 역할을 한다.
+    화면이동에 대한 액션은 모두 Nav Host Fragment에게 위임된다.
+
+    NavHost에는 Nav Controller도 포함한다.
+
+3. Nav Controller
+
+    NavController는 화면이동에 대한 컨트롤러 역할을 한다.
 
 ![image](https://user-images.githubusercontent.com/29790944/78469317-f20e3200-775a-11ea-93a9-852dce3d661c.png)
 
@@ -279,12 +286,16 @@ Nav Controller
 
 Room은 SQL의 abstraction layer로, 기본적으로 단말에 데이터를 저장할 수 있다.
 
+&nbsp;
+
 #### 장점
 
 - SQL의 상위 레벨이기 때문에 Room 라이브러리를 이용하면 connection을 신경쓰지 않아도 되고, 직접 테이블에 데이터를 넣고 빼는 작업을 하지 않는다.
 - 데이터베이스에 데이터를 쉽게 저장할 수 있다.
 - 데이터베이스나 테이블을 직접 만들지 않아도 알아서 생성해 준다.
 - SQL 명령어를 컴파일 시에 체크하기 때문에 문법 오류를 방지할 수 있다.
+
+&nbsp;
 
 #### Set Up
 
@@ -302,6 +313,8 @@ Room은 SQL의 abstraction layer로, 기본적으로 단말에 데이터를 저�
 
 - Database, Entity를 생성하고, Dao를 구현한 객체를 가지고 있다.
 
+&nbsp;
+
 #### Queries
 
 컴파일 타임에 문법을 체크하는 queries
@@ -314,6 +327,8 @@ Room은 SQL의 abstraction layer로, 기본적으로 단말에 데이터를 저�
 컴파일 타임에 문법을 체크하지 않는 queries
 
 - @RawQuery
+
+&nbsp;
 
 #### 제공하는 기능
 
