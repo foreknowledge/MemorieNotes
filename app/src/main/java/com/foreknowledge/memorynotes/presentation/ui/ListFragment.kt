@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.foreknowledge.memorynotes.R
 import com.foreknowledge.memorynotes.framework.ListViewModel
-import com.foreknowledge.memorynotes.presentation.ListFragmentDirections
 import com.foreknowledge.memorynotes.presentation.adapter.NoteListAdapter
 import com.foreknowledge.memorynotes.presentation.listener.ItemClickListener
 import kotlinx.android.synthetic.main.fragment_list.*

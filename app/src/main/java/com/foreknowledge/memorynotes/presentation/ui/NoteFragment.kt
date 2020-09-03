@@ -16,7 +16,6 @@ import androidx.navigation.Navigation
 import com.foreknowledge.memorynotes.R
 import com.foreknowledge.memorynotes.framework.NoteViewModel
 import com.foreknowledge.core.data.Note
-import com.foreknowledge.memorynotes.presentation.NoteFragmentArgs
 import kotlinx.android.synthetic.main.fragment_note.*
 
 class NoteFragment : Fragment() {
