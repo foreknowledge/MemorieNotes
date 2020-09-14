@@ -22,7 +22,6 @@ SOLID 원칙과 MVVM을 이용한 Clean Architecture를 구현한 안드로이�
 - [MVVM pattern](#mvvm-pattern)
 - [SOLID principles](#solid-principles)
 - [AAC](#aac) (Navigation / Room / ViewModel / LiveData)
-- Dependency Injection
 
 &nbsp;
 
@@ -206,7 +205,7 @@ ViewModel과 Model의 통신은 UI가 block되는 것을 막기 위해 backgroun
 ## AAC
 
 AAC는 Android Architecture Component의 약자로, Android Jetpack에 포함되어 있다.
-그 중 아래의 3가지 라이브러리를 프로젝트에 적용했다.
+그 중 아래의 4가지 라이브러리를 프로젝트에 적용했다.
 
 - [Navigation](#navigation)
 - [Room](#room)
